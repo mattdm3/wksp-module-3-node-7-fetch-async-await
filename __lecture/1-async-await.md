@@ -14,19 +14,31 @@
 const newPauseFunction = (sec) => {
     return new Promise(function(resolve) {
         console.log(`${sec}s pause`);
-        setTimeout(() => resolve('resolve'), sec * 1000);
+        setTimeout(() => resolve('resolved!'), sec * 1000);
     });
 }
 
 newPauseFunction(1)
     .then(() => newPauseFunction(2))
     .then(() => newPauseFunction(3))
-    .then(() => newPauseFunction(3))
+    .then(() => newPauseFunction(3)
     .then(data => console.log(data));
 ```
 
 _let's convert it to async/await_
 
+```js
+const doIt = async () => {
+    await newPauseFunction(1); 
+    await newPauseFunction(2); 
+    await newPauseFunction(3); 
+    await newPauseFunction(3); 
+    console.log('no more "awaits"')
+
+}
+
+doIt();
+```
 ---
 
 ### Exercise
@@ -44,6 +56,36 @@ transformText(string)
         return str;
     })
     .catch((err) => console.log(err));
+```
+
+_let's convert it to async/await_
+
+```js
+
+const transformText = async (string) => {
+    await function (str) { allCaps(str)}; 
+    await function (str) { trimFirst(str)}; 
+    await function (str) { trimLast(str)}; 
+    await function (str) { replaceWithX(str)}; 
+    await function (str) {
+        console.log(str); 
+        return str; 
+    }
+    .catch((err) => console.log(err))
+}
+
+// or
+
+const transformText = async (string) => {
+    let str = await  allCaps(str); 
+    let str1 = await  trimFirst(str); 
+    let str2 = await  trimLast(str); 
+    let str3 = await  replaceWithX(str); 
+    let str4 = await  ... 
+    
+}
+
+
 ```
 
 ---
