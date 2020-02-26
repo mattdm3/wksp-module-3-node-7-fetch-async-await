@@ -12,6 +12,8 @@ const pauseFunction = () => {
         console.log('shuffling off...');
     });
 }
+
+the problem here is that it will always resolve here. 
 ```
 
 ---
@@ -28,11 +30,14 @@ const pauseFunction = () => {
         console.log('shuffling off...');
     });
 }
+
+// i think it's:  pauseFunction().then(data => console.log(datat));
 ```
 
 ---
 
 <img src='./assets/promise.png' style='width:100%;' />
+
 
 ---
 

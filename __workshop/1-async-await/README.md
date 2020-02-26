@@ -6,6 +6,9 @@
 
 Rewrite the code from yesterday's exercise to make use of `async`/`await`
 
+
+
+
 ### Exercise 1
 
 Rewrite the code from yesterday's exercise to make use of `async`/`await`
@@ -13,6 +16,7 @@ Rewrite the code from yesterday's exercise to make use of `async`/`await`
 ### Exercise 2
 
 1. Write a function called `doublesLater` that returns a new Promise that doubles a num after 2 seconds.
+
 2. Here is a promise called `addPromise` that adds 3 numbers, one after another and then resolves to the sum of a number and the doubles of 3 other numbers (10, 20, 30). As you can see, it is quite the hellish situation. _it is also a convoluted and totally fabricated situation..._
 
 ```js
